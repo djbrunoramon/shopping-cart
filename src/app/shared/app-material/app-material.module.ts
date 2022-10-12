@@ -8,7 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatCommonModule} from '@angular/material/core';
 
-
 @NgModule({
   exports: [
     MatTableModule,

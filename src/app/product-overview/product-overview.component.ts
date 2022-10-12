@@ -9,6 +9,7 @@ import { AppProductsService } from '../services/app-products.service';
 })
 export class ProductOverviewComponent implements OnInit {
 
+  public loading = false;
   public products!: Products;
 
   constructor(private productService: AppProductsService) { }
@@ -18,10 +19,19 @@ export class ProductOverviewComponent implements OnInit {
   }
 
   private getProducts(): void {
+    this.showLoading();
     this.productService.getAllProducts().subscribe(data => {
       this.products = data;
-      console.log(this.products);
+      this.hideLoading();
     })
 
+  }
+
+  private showLoading(): void {
+    this.loading = true;
+  }
+
+  private hideLoading(): void {
+    this.loading = false;
   }
 }
