@@ -1,0 +1,27 @@
+<div class="cart-overview">
+  <div class="header">
+    <div class="title">
+      <div class="texto">
+        <h2>Carrinho</h2>
+      </div>
+      <div class="clear-cart">
+        <button mat-button color="primary">
+          Limpar Carrinho
+        </button>
+      </div>
+    </div>
+    <!-- <p class="muted">Abaixo estão os itens adicionados</p> -->
+  </div>
+  <hr>
+  <div class="products">
+    <div class="product" *ngFor="let item of productCart">
+      <div class="name-price">
+        <span class="name-product">{{ item.name }}</span>
+        <span class="price-product">{{ item.price }}</span>
+      </div>
+      <button mat-icon-button color="primary">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
