@@ -1,0 +1,35 @@
+.cart-overview {
+  padding: 15px;
+
+  .header {
+    .title {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .products {
+
+    .product {
+      padding: 5px;
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      flex-direction: row;
+
+      &:hover {
+        background-color: rgb(238, 238, 238);
+      }
+
+      .name-price {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+}
