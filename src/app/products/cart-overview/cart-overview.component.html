@@ -5,7 +5,7 @@
         <h2>Carrinho</h2>
       </div>
       <div class="clear-cart">
-        <button mat-button color="primary">
+        <button mat-button color="primary" (click)="clearCartList()">
           Limpar Carrinho
         </button>
       </div>
@@ -19,7 +19,7 @@
         <span class="name-product">{{ item.name }}</span>
         <span class="price-product">{{ item.price }}</span>
       </div>
-      <button mat-icon-button color="primary">
+      <button mat-icon-button color="primary" (click)="removeItemFromCartList(item)">
         <mat-icon>delete</mat-icon>
       </button>
     </div>

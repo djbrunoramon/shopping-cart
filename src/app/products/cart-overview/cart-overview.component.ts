@@ -1,4 +1,4 @@
-import { Products } from './../../model/products';
+import { CartService } from 'src/app/services/cart-service.service';
 import { Component, OnInit } from '@angular/core';
 import { ProductCart } from 'src/app/model/products-cart';
 
@@ -11,20 +11,24 @@ export class CartOverviewComponent implements OnInit {
 
   public productCart: ProductCart[] = [];
 
-  constructor() { }
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.getAllProductCart();
   }
 
-  private getAllProductCart(): void {
-    const products: ProductCart[] = [
-        { id: '100', name: 'Computador', price: 212.32 },
-        { id: '101', name: 'Notebook Dell i7', price: 2322.52 },
-        { id: '102', name: 'Playstation 5 4k', price: 5000.00 },
-    ];
-
-    this.productCart = products;
+  public clearCartList(): void {
+    this.cartService.clearCartList();
+    this.getAllProductCart();
   }
 
+  public removeItemFromCartList(item: ProductCart): void {
+    this.cartService.removeItemFromCartList(item);
+    this.getAllProductCart();
+  }
+
+  public getAllProductCart(): void {
+    const products: ProductCart[] = this.cartService.getItemsCartList();
+    this.productCart = products;
+  }
 }
